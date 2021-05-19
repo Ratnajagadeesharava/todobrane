@@ -1,0 +1,25 @@
+/* @import '~Bootstrap/dist/css/bootstrap.css'; */
+.todocontainer{
+        min-height: 100vh;
+        background-color: aqua;
+}
+.inputfield{
+        min-width: 30vw;
+        /* position :fixed; */
+        min-height: 100%;
+        float:left;
+        margin-right:5px;
+}
+.middlecontainer{
+        min-width:100vw;
+}
+.postcontainer{
+        max-height: 100vh;
+        overflow: scroll;
+}
+.fa {
+        background-color: teal;
+        border-radius: 100px;
+        font-size: small;
+        padding: 10px;
+}

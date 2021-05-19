@@ -1,0 +1,51 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container-fluid todocontainer d-flex ">
+        
+        <div class="middlecontainer d-flex justify-content-between">
+                <div class="inputfield box ">
+                        <form #inputForm="ngForm" (ngSubmit)="Submit(inputForm.value)">
+                                <div class="field">
+                                        <label for="" class="label">User Id</label>
+                                        <div class="control">
+                                                <input type="number" name="userId" id="" class="input is-primary" placeholder="UserId" [(ngModel)]="post.userId">
+                                        </div>
+                                </div>
+                                <div class="field">
+                                        <label for="" class="label">Title</label>
+                                        <div class="control">
+                                                <input type="text" name="title" id="" class="input is-primary" placeholder="title" [(ngModel)]="post.title">
+                                        </div>
+                                </div>
+                                <div class="field">
+                                        <label for="" class="label">Body</label>
+                                        <div class="control">
+                                                <textarea class="textarea is-info" name="body" placeholder="Primary textarea" [(ngModel)]="post.body"></textarea>
+                                        </div>
+                                </div>
+                                <input type="submit" value="Submit" class="button is-primary">
+                                <!-- {{inputForm.value|json}} -->
+                                <h3>Total size = {{l}}</h3>
+                        </form>
+                </div>
+                <div class="d-flex flex-column postcontainer">
+                        <div class="posts" *ngFor="let item of posts">
+                                <article class="message is-primary">
+                                        <div class="message-header">
+                                                <p>{{item.title}}  ({{item.id}})</p>
+                                                <div class="options d-flex">
+                                                        <i class="fa fa-edit " (click)="update(item)"></i>
+                                                        <div class="delete is-large" (click)="Delete(item)"></div>
+                                                </div>
+                                                
+                                        </div>
+                                        <div class="message-body">
+                                              {{item.body}}
+                                              
+                                        </div>
+                                </article>
+                        </div>
+                </div>
+                
+        </div>
+</div>

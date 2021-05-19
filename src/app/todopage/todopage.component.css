@@ -1,0 +1,8 @@
+.inputfield{
+        min-width: 20vw;
+        max-width: 20vw;
+}
+.mytable{
+        max-height: 100vh;
+        overflow: scroll;
+}

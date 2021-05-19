@@ -1,0 +1,64 @@
+<div class="button is-primary" (click)="insert()">add post</div>
+<div class="d-flex">
+        
+                <div *ngIf="editOption" class="inputfield box d-flex " >
+                        <div class="inputform">
+                        <form #inputForm="ngForm" (ngSubmit)="Submit()">
+                                <div class="field">
+                                        <label for="" class="label">User Id</label>
+                                        <div class="control">
+                                                <input type="number" name="userId" id="" class="input is-primary" placeholder="UserId" [(ngModel)]="post.userId">
+                                        </div>
+                                </div>
+                                <div class="field">
+                                        <label for="" class="label">Title</label>
+                                        <div class="control">
+                                                <input type="text" name="title" id="" class="input is-primary" placeholder="title" [(ngModel)]="post.title">
+                                        </div>
+                                </div>
+                                <div class="field">
+                                        <label for="" class="label">Body</label>
+                                        <div class="control">
+                                                <textarea class="textarea is-info" name="body" placeholder="Primary textarea" [(ngModel)]="post.body"></textarea>
+                                        </div>
+                                </div>
+                                <input *ngIf="!update" type="submit" value="Submit" class="button is-primary">
+                                
+                                <!-- {{inputForm.value|json}} -->
+                                <!-- <h3>Total size = {{l}}</h3> -->
+                                {{post|json}}
+                        </form>
+
+                        <button *ngIf = "update" class="button is-info" (click)=Update()> Update</button>
+                </div>
+                        <div class=" delete" (click)="close()">
+
+                        </div>
+                </div>
+        <div class="mytable">
+        <table class="table">
+                <thead>
+                        <tr>
+                                <th><abbr title="idno">id</abbr></th>
+                                <th>UserId</th>
+                                <th>title</th>
+                                <th>body</th>
+                                <th></th>
+                                <th></th>
+                        </tr>
+                </thead>
+                <tbody *ngFor = "let item of posts">
+                        <tr >
+                                <td>{{item.id}}</td>
+                                <td>{{item.userId}}</td>
+                                <td>{{item.title}}</td>
+                                <td>{{item.body}}</td>
+                                <td><div class="button is-primary" (click)="Edit(item)">Edit</div></td>
+                                <td><div class="button is-danger" (click)="Delete(item)">Delete</div></td>
+                     
+                        </tr>
+                        
+                </tbody>
+        </table>
+</div>
+</div>
